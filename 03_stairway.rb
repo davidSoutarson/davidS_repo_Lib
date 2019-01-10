@@ -1,15 +1,15 @@
 class Monte
 
 
-	def pyramide(chiffre = 2)
+	def pyramide(chiffre = 2)# methode pyramide
 		dimension = 10
 		dim_pyramide = dimension * 2
 		dim_espace = dimension + 1
-		for dimensions in 1..dim_pyramide
-			if dimensions % 2 != 0 then
+		for dimensions in 1..dim_pyramide # permet de gere les lignes/animation
+			if dimensions % 2 != 0 then 
 				dieze = "#"*dimensions
 				dim_espace -= 1
-				if dim_espace == chiffre then
+				if dim_espace == chiffre then # permet de gere les espaces
 					espace = " "*(dim_espace-1)+"H" 
 					puts "#{espace}#{dieze}"
 				else
@@ -32,10 +32,10 @@ class Monte
 			puts "======================================="
 			print "Appuyer sur entrer pour lancé le dé"
 			bals = gets.chomp
-			chiffre = rand(1..6)
+			chiffre = rand(1..6) # pour [entre] les dé au "azard" et incrementer la positiom et stoquer dans chifre
 				if chiffre == 5 || chiffre == 6 then
-					position += 1
-					if position == 11 then
+					position += 1 #pour monter
+					if position == 11 then #si position egale 11 ganier 
 						# appel methode pyramide avec paramètre position
 						pyramide(position)
 						# Fin
@@ -50,8 +50,8 @@ class Monte
 						puts "Vous êtes à la #{position}ème position"
 					end
 				elsif chiffre == 1 then
-					position -= 1
-					if position < 2 then
+					position -= 1 #pour desendre
+					if position < 2 then # si psition iferieur a 2 predu
 						puts " =================="
 						puts "| GAME OVER !!!!!! |"
 						puts " =================="
